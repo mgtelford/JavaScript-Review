@@ -1,6 +1,8 @@
 /* Declare and Define the functions here that will make the function calls below work properly */
 
-
+var first = function(arr, callback) {
+     callback(arr[0]);
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -9,10 +11,9 @@ first(names, function(firstName){
 
 
 
-
-/* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
-
-
+var last = function(arr, callback) {
+  callback(arr[arr.length - 1]);
+}
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -26,6 +27,16 @@ last(names, function(lastName){
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 //have the contains function return a boolean value for if the name is in the array or not.
+
+var contains = function(name, arr, callback) {
+   var exists = false;
+   for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === name) {
+      exists = true;
+    } 
+  } 
+  callback(exists);
+}
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -50,13 +61,35 @@ var numbers = [1,2,3,4,5];
 map(numbers, function(num){
   return num * 2; //returns an array of [2,4,6,8,10]
 });
+var map = function(arr, callback) {
+    var newArr = [];
+    for (var i = 0; i < arr.length; i++) {
+      newArr.push(arr[i] * 2);
+    }
+    callback(newArr);
+};
 
+var cb = function (arr) {
+  console.log("The new array is " + arr);
+}
 
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
-
+var uniq = function(arr, callback) {
+ var newArr = [];
+  for (var i = 0; i < arr.length; i++) {
+  if (newArr.indexOf(arr[i])) {
+       newArr.push(arr[i]);
+  }
+}
+return newArr;
+}
+var cb = function(newArr) {
+  console.log('The new names array with all the duplicate items removed is ', newArr);
+}
+ for (var i = 0; i < arr.length; i++) {
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -68,7 +101,12 @@ uniq(names, function(uniqArr){
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
+var each = function(arr, callback) {
+    var name = arr[];
+  }
+ callback(item , num);
 
+}
 
 
 
@@ -114,7 +152,9 @@ getUserById('16t', users, function(user){
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
+var find = function(arr, callback) {
 
+}
 
 
 //Looks through each value in the list, returning the first one that passes a truth test 
